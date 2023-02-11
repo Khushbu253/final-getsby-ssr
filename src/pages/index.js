@@ -16,7 +16,7 @@ export async function getServerData() {
     const footer = await fetch(`http://192.168.0.204:1330/address`);
     return {
       props: {
-        footer: footer,
+        footer: await footer.json(),
       },
     };
   } catch (error) {
