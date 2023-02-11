@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `My Gatsby Site`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://getsbyd.vercel.app/`,
   },
   flags: {
     DEV_SSR: true

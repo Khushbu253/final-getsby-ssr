@@ -7,12 +7,16 @@ const IndexPage = ({ serverData }) => {
   );
 };
 
+export default IndexPage
+
+export const Head = () => <title>Home Page</title>
+
 export async function getServerData() {
   try {
-    const footer = await fetch(`http://192.168.0.204:1330/address`);
+    // const footer = await fetch(`http://192.168.0.204:1330/address`);
     return {
       props: {
-        footer: await footer.json(),
+        footer: 'test',
       },
     };
   } catch (error) {
@@ -23,6 +27,4 @@ export async function getServerData() {
     };
   }
 }
-export default IndexPage
 
-export const Head = () => <title>Home Page</title>
