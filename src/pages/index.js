@@ -1,9 +1,9 @@
 import * as React from "react";
 
 const IndexPage = ({ serverData }) => {
-  console.log(serverData);
+  console.log(serverData?.footer?.description);
   return (
-     <div>ddd</div>
+     <div>{serverData?.footer?.description}---test</div>
   );
 };
 
@@ -13,7 +13,7 @@ export const Head = () => <title>Home Page</title>
 
 export async function getServerData() {
   try {
-    const footer = await fetch(`http://192.168.0.204:1330/address`);
+    const footer = await fetch(`https://dummyjson.com/products/1`);
     return {
       props: {
         footer: await footer.json(),
