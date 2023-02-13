@@ -10,7 +10,7 @@ import Testimonials from "../components/Index/Testimonials";
 
 // import Partner from "../components/Index/Partner";
 // import OurBlog from "../components/Index/OurBlog";
-import ProjectStartArea from "../components/Index/ProjectStartArea";
+// import ProjectStartArea from "../components/Index/ProjectStartArea";
 import Footer from "../components/App/Footer";
 
 const IndexPage = ({ serverData }) => {
@@ -72,9 +72,9 @@ export async function getServerData() {
     );
     // const Partner = await fetch(`https://api.cybercomcreation.com/partner`);
     // const OurBlog = await fetch(`https://api.cybercomcreation.com/blogs`);
-    const ProjectStartArea = await fetch(
-      `https://api.cybercomcreation.com/start-your-project`
-    );
+    // const ProjectStartArea = await fetch(
+    //   `https://api.cybercomcreation.com/start-your-project`
+    // );
     return {
       props: {
         seoDetails: await seoDetails.json(),
@@ -90,7 +90,7 @@ export async function getServerData() {
         Testimonials: await Testimonials.json(),
         // Partner: await Partner.json(),
         // OurBlog: await OurBlog.json(),
-        ProjectStartArea: await ProjectStartArea.json(),
+        // ProjectStartArea: await ProjectStartArea.json(),
       },
     };
   } catch (error) {
