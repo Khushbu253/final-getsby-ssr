@@ -31,7 +31,7 @@ const IndexPage = ({ serverData }) => {
       projects={serverData.projects}
     />
     <Pricing />
-    <Testimonials Testimonials={serverData.Testimonials} />
+    {/* <Testimonials Testimonials={serverData.Testimonials} /> */}
     <Partner Partner={serverData.Partner} />
 
     <OurBlog OurBlog={serverData.OurBlog} />
