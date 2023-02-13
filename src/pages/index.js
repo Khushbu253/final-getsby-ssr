@@ -1,42 +1,43 @@
 import * as React from "react";
 import Layout from "../components/App/Layout";
 import Banner from "../components/Index/Banner";
-import OurSolutions from "../components/Index/OurSolutions";
-import OurFeatures from "../components/Index/OurFeatures";
-import OurServices from "../components/Index/OurServices";
-import RecentProjects from "../components/Index/RecentProjects";
-import Testimonials from "../components/Index/Testimonials";
-import Pricing from "../components/Index/Pricing";
-import Partner from "../components/Index/Partner";
-import OurBlog from "../components/Index/OurBlog";
-import ProjectStartArea from "../components/Index/ProjectStartArea";
-import Footer from "../components/App/Footer";
+// import OurSolutions from "../components/Index/OurSolutions";
+// import OurFeatures from "../components/Index/OurFeatures";
+// import OurServices from "../components/Index/OurServices";
+// import RecentProjects from "../components/Index/RecentProjects";
+// import Testimonials from "../components/Index/Testimonials";
+// import Pricing from "../components/Index/Pricing";
+// import Partner from "../components/Index/Partner";
+// import OurBlog from "../components/Index/OurBlog";
+// import ProjectStartArea from "../components/Index/ProjectStartArea";
+// import Footer from "../components/App/Footer";
 
 const IndexPage = ({ serverData }) => {
-  console.log(serverData?.footer?.description);
+  console.log(serverData,"dddddddd");
   return (
     <Layout pageName="home">
+      <h1>pppppp</h1>
     <Banner data={serverData?.banner} />
-    <OurSolutions
+    {/* <OurSolutions
       data={serverData.solution}
       serviceSolutions={serverData.serviceSolutions}
-    />
-    <OurServices
+    /> */}
+    {/* <OurServices
       servicesOne={serverData.servicesOne}
       servicesTwo={serverData.servicesTwo}
-    />
-    <OurFeatures data={serverData.features} />
-    <RecentProjects
+    /> */}
+    {/* <OurFeatures data={serverData.features} /> */}
+    {/* <RecentProjects
       recentProjects={serverData.recentProjects}
       projects={serverData.projects}
-    />
-    <Pricing />
+    /> */}
+    {/* <Pricing /> */}
     {/* <Testimonials Testimonials={serverData.Testimonials} /> */}
-    <Partner Partner={serverData.Partner} />
+    {/* <Partner Partner={serverData.Partner} /> */}
 
-    <OurBlog OurBlog={serverData.OurBlog} />
-    <ProjectStartArea ProjectStartArea={serverData.ProjectStartArea} />
-    <Footer footer={serverData.footer} />
+    {/* <OurBlog OurBlog={serverData.OurBlog} /> */}
+    {/* <ProjectStartArea ProjectStartArea={serverData.ProjectStartArea} />  */}
+     {/* <Footer footer={serverData.footer} /> */}
   </Layout>
   );
 };
@@ -65,9 +66,9 @@ export async function getServerData() {
       `https://api.cybercomcreation.com/recent-projects`
     );
     const projects = await fetch(`https://api.cybercomcreation.com/projects`);
-    const Testimonials = await fetch(
-      `https://api.cybercomcreation.com/testimonials`
-    );
+    // const Testimonials = await fetch(
+    //   `https://api.cybercomcreation.com/testimonials`
+    // );
     const Partner = await fetch(`https://api.cybercomcreation.com/partner`);
     const OurBlog = await fetch(`https://api.cybercomcreation.com/blogs`);
     const ProjectStartArea = await fetch(
@@ -84,7 +85,7 @@ export async function getServerData() {
         servicesTwo: await servicesTwo.json(),
         recentProjects: await RecentProjects.json(),
         projects: await projects.json(),
-        Testimonials: await Testimonials.json(),
+        // Testimonials: await Testimonials.json(),
         Partner: await Partner.json(),
         OurBlog: await OurBlog.json(),
         ProjectStartArea: await ProjectStartArea.json(),
