@@ -1,7 +1,7 @@
 import * as React from "react";
 import Layout from "../components/App/Layout";
 import Banner from "../components/Index/Banner";
-// import OurSolutions from "../components/Index/OurSolutions";
+import OurSolutions from "../components/Index/OurSolutions";
 // import OurFeatures from "../components/Index/OurFeatures";
 // import OurServices from "../components/Index/OurServices";
 // import RecentProjects from "../components/Index/RecentProjects";
@@ -17,10 +17,10 @@ const IndexPage = ({ serverData }) => {
   return (
     <Layout pageName="home">
     <Banner data={serverData?.banner} />
-    {/* <OurSolutions
+    <OurSolutions
       data={serverData.solution}
       serviceSolutions={serverData.serviceSolutions}
-    /> */}
+    />
     {/* <OurServices
       servicesOne={serverData.servicesOne}
       servicesTwo={serverData.servicesTwo}
@@ -50,7 +50,7 @@ export async function getServerData() {
     // const footer = await fetch(`https://api.cybercomcreation.com/address`);
     const footer = await fetch(`https://api.cybercomcreation.com/address`);
     const banner = await fetch(`https://api.cybercomcreation.com/default-banner`);
-    // const solution = await fetch(`https://api.cybercomcreation.com/solution`);
+    const solution = await fetch(`https://api.cybercomcreation.com/solution`);
     // const serviceSolutions = await fetch(
     //   `https://api.cybercomcreation.com/service-solutions`
     // );
@@ -77,7 +77,7 @@ export async function getServerData() {
       props: {
         footer: await footer.json(),
         banner: await banner.json(),
-        // solution: await solution.json(),
+        solution: await solution.json(),
         // serviceSolutions: await serviceSolutions.json(),
         // features: await features.json(),
         // servicesOne: await servicesOne.json(),
