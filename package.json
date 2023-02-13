@@ -25,6 +25,7 @@
     "react-accessible-accordion": "^5.0.0",
     "react-bootstrap": "^2.7.1",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-modal-video": "^2.0.0",
     "react-wow": "^1.0.0",
     "recoil": "^0.7.6"

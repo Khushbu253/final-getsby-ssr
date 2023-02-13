@@ -2,8 +2,8 @@ import * as React from "react";
 import Layout from "../components/App/Layout";
 import Banner from "../components/Index/Banner";
 import OurSolutions from "../components/Index/OurSolutions";
-// import OurFeatures from "../components/Index/OurFeatures";
 // import OurServices from "../components/Index/OurServices";
+// import OurFeatures from "../components/Index/OurFeatures";
 // import RecentProjects from "../components/Index/RecentProjects";
 // import Testimonials from "../components/Index/Testimonials";
 // import Pricing from "../components/Index/Pricing";
@@ -15,7 +15,7 @@ import Footer from "../components/App/Footer";
 const IndexPage = ({ serverData }) => {
   console.log(serverData,"dddddddd");
   return (
-    <Layout pageName="home">
+    <Layout pageName="home" seoData={serverData?.seoDetails}>
     <Banner data={serverData?.banner} />
     <OurSolutions
       data={serverData.solution}
@@ -48,6 +48,7 @@ export const Head = () => <title>Home Page</title>
 export async function getServerData() {
   try {
     // const footer = await fetch(`https://api.cybercomcreation.com/address`);
+    const seoDetails = await fetch(`https://api.cybercomcreation.com/seo`);
     const footer = await fetch(`https://api.cybercomcreation.com/address`);
     const banner = await fetch(`https://api.cybercomcreation.com/default-banner`);
     const solution = await fetch(`https://api.cybercomcreation.com/solution`);
@@ -75,13 +76,14 @@ export async function getServerData() {
     // );
     return {
       props: {
+        seoDetails: await seoDetails.json(),
         footer: await footer.json(),
         banner: await banner.json(),
         solution: await solution.json(),
         serviceSolutions: await serviceSolutions.json(),
-        // features: await features.json(),
         // servicesOne: await servicesOne.json(),
         // servicesTwo: await servicesTwo.json(),
+        // features: await features.json(),
         // recentProjects: await RecentProjects.json(),
         // projects: await projects.json(),
         // Testimonials: await Testimonials.json(),
