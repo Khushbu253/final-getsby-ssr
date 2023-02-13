@@ -10,14 +10,14 @@ import Banner from "../components/Index/Banner";
 // import Partner from "../components/Index/Partner";
 // import OurBlog from "../components/Index/OurBlog";
 // import ProjectStartArea from "../components/Index/ProjectStartArea";
-// import Footer from "../components/App/Footer";
+import Footer from "../components/App/Footer";
 
 const IndexPage = ({ serverData }) => {
   console.log(serverData,"dddddddd");
   return (
     <Layout pageName="home">
       <h1>pppppp</h1>
-    <Banner data={serverData?.banner} />
+    {/* <Banner data={serverData?.banner} /> */}
     {/* <OurSolutions
       data={serverData.solution}
       serviceSolutions={serverData.serviceSolutions}
@@ -37,7 +37,7 @@ const IndexPage = ({ serverData }) => {
 
     {/* <OurBlog OurBlog={serverData.OurBlog} /> */}
     {/* <ProjectStartArea ProjectStartArea={serverData.ProjectStartArea} />  */}
-     {/* <Footer footer={serverData.footer} /> */}
+     <Footer footer={serverData.footer} />
   </Layout>
   );
 };
@@ -50,45 +50,45 @@ export async function getServerData() {
   try {
     // const footer = await fetch(`https://api.cybercomcreation.com/address`);
     const footer = await fetch(`https://api.cybercomcreation.com/address`);
-    const banner = await fetch(`https://api.cybercomcreation.com/default-banner`);
-    const solution = await fetch(`https://api.cybercomcreation.com/solution`);
-    const serviceSolutions = await fetch(
-      `https://api.cybercomcreation.com/service-solutions`
-    );
-    const servicesOne = await fetch(
-      `https://api.cybercomcreation.com/services-one`
-    );
-    const servicesTwo = await fetch(
-      `https://api.cybercomcreation.com/services-two`
-    );
-    const features = await fetch(`https://api.cybercomcreation.com/our-features`);
-    const RecentProjects = await fetch(
-      `https://api.cybercomcreation.com/recent-projects`
-    );
-    const projects = await fetch(`https://api.cybercomcreation.com/projects`);
+    // const banner = await fetch(`https://api.cybercomcreation.com/default-banner`);
+    // const solution = await fetch(`https://api.cybercomcreation.com/solution`);
+    // const serviceSolutions = await fetch(
+    //   `https://api.cybercomcreation.com/service-solutions`
+    // );
+    // const servicesOne = await fetch(
+    //   `https://api.cybercomcreation.com/services-one`
+    // );
+    // const servicesTwo = await fetch(
+    //   `https://api.cybercomcreation.com/services-two`
+    // );
+    // const features = await fetch(`https://api.cybercomcreation.com/our-features`);
+    // const RecentProjects = await fetch(
+    //   `https://api.cybercomcreation.com/recent-projects`
+    // );
+    // const projects = await fetch(`https://api.cybercomcreation.com/projects`);
     // const Testimonials = await fetch(
     //   `https://api.cybercomcreation.com/testimonials`
     // );
-    const Partner = await fetch(`https://api.cybercomcreation.com/partner`);
-    const OurBlog = await fetch(`https://api.cybercomcreation.com/blogs`);
-    const ProjectStartArea = await fetch(
-      `https://api.cybercomcreation.com/start-your-project`
-    );
+    // const Partner = await fetch(`https://api.cybercomcreation.com/partner`);
+    // const OurBlog = await fetch(`https://api.cybercomcreation.com/blogs`);
+    // const ProjectStartArea = await fetch(
+    //   `https://api.cybercomcreation.com/start-your-project`
+    // );
     return {
       props: {
         footer: await footer.json(),
-        banner: await banner.json(),
-        solution: await solution.json(),
-        serviceSolutions: await serviceSolutions.json(),
-        features: await features.json(),
-        servicesOne: await servicesOne.json(),
-        servicesTwo: await servicesTwo.json(),
-        recentProjects: await RecentProjects.json(),
-        projects: await projects.json(),
+        // banner: await banner.json(),
+        // solution: await solution.json(),
+        // serviceSolutions: await serviceSolutions.json(),
+        // features: await features.json(),
+        // servicesOne: await servicesOne.json(),
+        // servicesTwo: await servicesTwo.json(),
+        // recentProjects: await RecentProjects.json(),
+        // projects: await projects.json(),
         // Testimonials: await Testimonials.json(),
-        Partner: await Partner.json(),
-        OurBlog: await OurBlog.json(),
-        ProjectStartArea: await ProjectStartArea.json(),
+        // Partner: await Partner.json(),
+        // OurBlog: await OurBlog.json(),
+        // ProjectStartArea: await ProjectStartArea.json(),
       },
     };
   } catch (error) {
