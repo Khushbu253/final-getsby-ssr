@@ -36,7 +36,7 @@ const IndexPage = ({ serverData }) => {
     {/* <Partner Partner={serverData.Partner} /> */}
 
     {/* <OurBlog OurBlog={serverData.OurBlog} /> */}
-    <ProjectStartArea ProjectStartArea={serverData.ProjectStartArea} /> 
+    {/* <ProjectStartArea ProjectStartArea={serverData.ProjectStartArea} />  */}
      <Footer footer={serverData.footer} />
   </Layout>
   );
