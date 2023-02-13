@@ -16,8 +16,7 @@ const IndexPage = ({ serverData }) => {
   console.log(serverData,"dddddddd");
   return (
     <Layout pageName="home">
-      <h1>pppppp</h1>
-    {/* <Banner data={serverData?.banner} /> */}
+    <Banner data={serverData?.banner} />
     {/* <OurSolutions
       data={serverData.solution}
       serviceSolutions={serverData.serviceSolutions}
@@ -50,7 +49,7 @@ export async function getServerData() {
   try {
     // const footer = await fetch(`https://api.cybercomcreation.com/address`);
     const footer = await fetch(`https://api.cybercomcreation.com/address`);
-    // const banner = await fetch(`https://api.cybercomcreation.com/default-banner`);
+    const banner = await fetch(`https://api.cybercomcreation.com/default-banner`);
     // const solution = await fetch(`https://api.cybercomcreation.com/solution`);
     // const serviceSolutions = await fetch(
     //   `https://api.cybercomcreation.com/service-solutions`
@@ -77,7 +76,7 @@ export async function getServerData() {
     return {
       props: {
         footer: await footer.json(),
-        // banner: await banner.json(),
+        banner: await banner.json(),
         // solution: await solution.json(),
         // serviceSolutions: await serviceSolutions.json(),
         // features: await features.json(),
