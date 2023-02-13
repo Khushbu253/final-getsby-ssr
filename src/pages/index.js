@@ -3,8 +3,8 @@ import Layout from "../components/App/Layout";
 import Banner from "../components/Index/Banner";
 import OurSolutions from "../components/Index/OurSolutions";
 import OurServices from "../components/Index/OurServices";
-// import OurFeatures from "../components/Index/OurFeatures";
-// import RecentProjects from "../components/Index/RecentProjects";
+import OurFeatures from "../components/Index/OurFeatures";
+import RecentProjects from "../components/Index/RecentProjects";
 // import Testimonials from "../components/Index/Testimonials";
 // import Pricing from "../components/Index/Pricing";
 // import Partner from "../components/Index/Partner";
@@ -25,11 +25,11 @@ const IndexPage = ({ serverData }) => {
       servicesOne={serverData.servicesOne}
       // servicesTwo={serverData.servicesTwo}
     />
-    {/* <OurFeatures data={serverData.features} /> */}
-    {/* <RecentProjects
+    <OurFeatures data={serverData.features} />
+    <RecentProjects
       recentProjects={serverData.recentProjects}
       projects={serverData.projects}
-    /> */}
+    />
     {/* <Pricing /> */}
     {/* <Testimonials Testimonials={serverData.Testimonials} /> */}
     {/* <Partner Partner={serverData.Partner} /> */}
@@ -61,11 +61,11 @@ export async function getServerData() {
     // const servicesTwo = await fetch(
     //   `https://api.cybercomcreation.com/services-two`
     // );
-    // const features = await fetch(`https://api.cybercomcreation.com/our-features`);
-    // const RecentProjects = await fetch(
-    //   `https://api.cybercomcreation.com/recent-projects`
-    // );
-    // const projects = await fetch(`https://api.cybercomcreation.com/projects`);
+    const features = await fetch(`https://api.cybercomcreation.com/our-features`);
+    const RecentProjects = await fetch(
+      `https://api.cybercomcreation.com/recent-projects`
+    );
+    const projects = await fetch(`https://api.cybercomcreation.com/projects`);
     // const Testimonials = await fetch(
     //   `https://api.cybercomcreation.com/testimonials`
     // );
@@ -83,9 +83,9 @@ export async function getServerData() {
         serviceSolutions: await serviceSolutions.json(),
         servicesOne: await servicesOne.json(),
         // servicesTwo: await servicesTwo.json(),
-        // features: await features.json(),
-        // recentProjects: await RecentProjects.json(),
-        // projects: await projects.json(),
+        features: await features.json(),
+        recentProjects: await RecentProjects.json(),
+        projects: await projects.json(),
         // Testimonials: await Testimonials.json(),
         // Partner: await Partner.json(),
         // OurBlog: await OurBlog.json(),
