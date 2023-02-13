@@ -78,7 +78,7 @@ export async function getServerData() {
         footer: await footer.json(),
         banner: await banner.json(),
         solution: await solution.json(),
-        // serviceSolutions: await serviceSolutions.json(),
+        serviceSolutions: await serviceSolutions.json(),
         // features: await features.json(),
         // servicesOne: await servicesOne.json(),
         // servicesTwo: await servicesTwo.json(),

@@ -9,5 +9,17 @@ module.exports = {
   flags: {
     DEV_SSR: true
   },
-  plugins: [],
+  plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'zxx'
+      },
+      options: {
+        apiKey: process.env.API_KEY,
+      },
+    },
+  ],
 }
