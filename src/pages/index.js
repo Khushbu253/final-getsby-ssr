@@ -9,8 +9,8 @@ import Pricing from "../components/Index/Pricing";
 import Testimonials from "../components/Index/Testimonials";
 
 // import Partner from "../components/Index/Partner";
-import OurBlog from "../components/Index/OurBlog";
-// import ProjectStartArea from "../components/Index/ProjectStartArea";
+// import OurBlog from "../components/Index/OurBlog";
+import ProjectStartArea from "../components/Index/ProjectStartArea";
 import Footer from "../components/App/Footer";
 
 const IndexPage = ({ serverData }) => {
@@ -35,8 +35,8 @@ const IndexPage = ({ serverData }) => {
     <Testimonials Testimonials={serverData.Testimonials} />
     {/* <Partner Partner={serverData.Partner} /> */}
 
-    <OurBlog OurBlog={serverData.OurBlog} />
-    {/* <ProjectStartArea ProjectStartArea={serverData.ProjectStartArea} />  */}
+    {/* <OurBlog OurBlog={serverData.OurBlog} /> */}
+    <ProjectStartArea ProjectStartArea={serverData.ProjectStartArea} /> 
      <Footer footer={serverData.footer} />
   </Layout>
   );
@@ -71,10 +71,10 @@ export async function getServerData() {
       `https://api.cybercomcreation.com/testimonials`
     );
     // const Partner = await fetch(`https://api.cybercomcreation.com/partner`);
-    const OurBlog = await fetch(`https://api.cybercomcreation.com/blogs`);
-    // const ProjectStartArea = await fetch(
-    //   `https://api.cybercomcreation.com/start-your-project`
-    // );
+    // const OurBlog = await fetch(`https://api.cybercomcreation.com/blogs`);
+    const ProjectStartArea = await fetch(
+      `https://api.cybercomcreation.com/start-your-project`
+    );
     return {
       props: {
         seoDetails: await seoDetails.json(),
@@ -89,8 +89,8 @@ export async function getServerData() {
         projects: await projects.json(),
         Testimonials: await Testimonials.json(),
         // Partner: await Partner.json(),
-        OurBlog: await OurBlog.json(),
-        // ProjectStartArea: await ProjectStartArea.json(),
+        // OurBlog: await OurBlog.json(),
+        ProjectStartArea: await ProjectStartArea.json(),
       },
     };
   } catch (error) {
