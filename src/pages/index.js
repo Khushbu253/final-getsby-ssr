@@ -51,9 +51,9 @@ export async function getServerData() {
     const footer = await fetch(`https://api.cybercomcreation.com/address`);
     const banner = await fetch(`https://api.cybercomcreation.com/default-banner`);
     const solution = await fetch(`https://api.cybercomcreation.com/solution`);
-    // const serviceSolutions = await fetch(
-    //   `https://api.cybercomcreation.com/service-solutions`
-    // );
+    const serviceSolutions = await fetch(
+      `https://api.cybercomcreation.com/service-solutions`
+    );
     // const servicesOne = await fetch(
     //   `https://api.cybercomcreation.com/services-one`
     // );
