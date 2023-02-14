@@ -16,29 +16,30 @@ import Footer from "../components/App/Footer";
 const IndexPage = ({ serverData }) => {
   console.log(serverData,"dddddddd");
   return (
-    <Layout pageName="home" seoData={serverData?.seoDetails}>
-    {/* <Banner data={serverData?.banner} />
-    <OurSolutions
-      data={serverData.solution}
-      serviceSolutions={serverData.serviceSolutions}
-    />
-    <OurServices
-      servicesOne={serverData.servicesOne}
-      // servicesTwo={serverData.servicesTwo}
-    />
-    <OurFeatures data={serverData.features} />
-    <RecentProjects
-      recentProjects={serverData.recentProjects}
-      projects={serverData.projects}
-    />
-    <Pricing />
-    <Testimonials Testimonials={serverData.Testimonials} />
-    {/* <Partner Partner={serverData.Partner} /> */}
+    <h1>hello test</h1>
+    // <Layout pageName="home" seoData={serverData?.seoDetails}>
+  // <Banner data={serverData?.banner} />
+  //   <OurSolutions
+  //     data={serverData.solution}
+  //     serviceSolutions={serverData.serviceSolutions}
+  //   />
+  //   <OurServices
+  //     servicesOne={serverData.servicesOne}
+  //     // servicesTwo={serverData.servicesTwo}
+  //   />
+  //   <OurFeatures data={serverData.features} />
+  //   <RecentProjects
+  //     recentProjects={serverData.recentProjects}
+  //     projects={serverData.projects}
+  //   />
+  //   <Pricing />
+  //   <Testimonials Testimonials={serverData.Testimonials} />
+  //  <Partner Partner={serverData.Partner} /> 
 
-    {/* <OurBlog OurBlog={serverData.OurBlog} /> */}
-    {/* <ProjectStartArea ProjectStartArea={serverData.ProjectStartArea} />  */}
-     {/* <Footer footer={serverData.footer} />  */}
-  </Layout>
+    // <OurBlog OurBlog={serverData.OurBlog} /> */}
+    //  <ProjectStartArea ProjectStartArea={serverData.ProjectStartArea} />  */}
+      // <Footer footer={serverData.footer} />  */}
+  // </Layout>
   );
 };
 
@@ -49,7 +50,7 @@ export const Head = () => <title>Home Page</title>
 export async function getServerData() {
   try {
     // const footer = await fetch(`https://api.cybercomcreation.com/address`);
-    const seoDetails = await fetch(`https://api.cybercomcreation.com/seo`);
+    // const seoDetails = await fetch(`https://api.cybercomcreation.com/seo`);
     // const footer = await fetch(`https://api.cybercomcreation.com/address`);
     // const banner = await fetch(`https://api.cybercomcreation.com/default-banner`);
     // const solution = await fetch(`https://api.cybercomcreation.com/solution`);
@@ -77,7 +78,7 @@ export async function getServerData() {
     // );
     return {
       props: {
-        seoDetails: await seoDetails.json(),
+        // seoDetails: await seoDetails.json(),
         // footer: await footer.json(),
         // banner: await banner.json(),
         // solution: await solution.json(),
