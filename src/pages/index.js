@@ -17,7 +17,7 @@ const IndexPage = ({ serverData }) => {
   console.log(serverData,"dddddddd");
   return (
     <Layout pageName="home" seoData={serverData?.seoDetails}>
-    <Banner data={serverData?.banner} />
+    {/* <Banner data={serverData?.banner} />
     <OurSolutions
       data={serverData.solution}
       serviceSolutions={serverData.serviceSolutions}
@@ -37,7 +37,7 @@ const IndexPage = ({ serverData }) => {
 
     {/* <OurBlog OurBlog={serverData.OurBlog} /> */}
     {/* <ProjectStartArea ProjectStartArea={serverData.ProjectStartArea} />  */}
-     <Footer footer={serverData.footer} />
+     {/* <Footer footer={serverData.footer} />  */}
   </Layout>
   );
 };
@@ -50,26 +50,26 @@ export async function getServerData() {
   try {
     // const footer = await fetch(`https://api.cybercomcreation.com/address`);
     const seoDetails = await fetch(`https://api.cybercomcreation.com/seo`);
-    const footer = await fetch(`https://api.cybercomcreation.com/address`);
-    const banner = await fetch(`https://api.cybercomcreation.com/default-banner`);
-    const solution = await fetch(`https://api.cybercomcreation.com/solution`);
-    const serviceSolutions = await fetch(
-      `https://api.cybercomcreation.com/service-solutions`
-    );
-    const servicesOne = await fetch(
-      `https://api.cybercomcreation.com/services-one`
-    );
-    // const servicesTwo = await fetch(
-    //   `https://api.cybercomcreation.com/services-two`
+    // const footer = await fetch(`https://api.cybercomcreation.com/address`);
+    // const banner = await fetch(`https://api.cybercomcreation.com/default-banner`);
+    // const solution = await fetch(`https://api.cybercomcreation.com/solution`);
+    // const serviceSolutions = await fetch(
+    //   `https://api.cybercomcreation.com/service-solutions`
     // );
-    const features = await fetch(`https://api.cybercomcreation.com/our-features`);
-    const RecentProjects = await fetch(
-      `https://api.cybercomcreation.com/recent-projects`
-    );
-    const projects = await fetch(`https://api.cybercomcreation.com/projects`);
-    const Testimonials = await fetch(
-      `https://api.cybercomcreation.com/testimonials`
-    );
+    // const servicesOne = await fetch(
+    //   `https://api.cybercomcreation.com/services-one`
+    // );
+    // // const servicesTwo = await fetch(
+    // //   `https://api.cybercomcreation.com/services-two`
+    // // );
+    // const features = await fetch(`https://api.cybercomcreation.com/our-features`);
+    // const RecentProjects = await fetch(
+    //   `https://api.cybercomcreation.com/recent-projects`
+    // );
+    // const projects = await fetch(`https://api.cybercomcreation.com/projects`);
+    // const Testimonials = await fetch(
+    //   `https://api.cybercomcreation.com/testimonials`
+    // );
     // const Partner = await fetch(`https://api.cybercomcreation.com/partner`);
     // const OurBlog = await fetch(`https://api.cybercomcreation.com/blogs`);
     // const ProjectStartArea = await fetch(
@@ -78,16 +78,16 @@ export async function getServerData() {
     return {
       props: {
         seoDetails: await seoDetails.json(),
-        footer: await footer.json(),
-        banner: await banner.json(),
-        solution: await solution.json(),
-        serviceSolutions: await serviceSolutions.json(),
-        servicesOne: await servicesOne.json(),
-        // servicesTwo: await servicesTwo.json(),
-        features: await features.json(),
-        recentProjects: await RecentProjects.json(),
-        projects: await projects.json(),
-        Testimonials: await Testimonials.json(),
+        // footer: await footer.json(),
+        // banner: await banner.json(),
+        // solution: await solution.json(),
+        // serviceSolutions: await serviceSolutions.json(),
+        // servicesOne: await servicesOne.json(),
+        // // servicesTwo: await servicesTwo.json(),
+        // features: await features.json(),
+        // recentProjects: await RecentProjects.json(),
+        // projects: await projects.json(),
+        // Testimonials: await Testimonials.json(),
         // Partner: await Partner.json(),
         // OurBlog: await OurBlog.json(),
         // ProjectStartArea: await ProjectStartArea.json(),
